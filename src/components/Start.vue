@@ -74,6 +74,7 @@
 			<button @click="back" class="btn-return">Retour</button>
 		</div>
 	</div>
+	<img class="logo" src="../assets/Alycelogo.webp" alt="Logo Alyce">
 	<!-- <button class="btn-fin" @click="downloadData">download DATA</button> -->
 </template>
 
@@ -259,6 +260,9 @@ body {
 	background-color: #1e1e1e;
 }
 
+.logo {
+	height: 3em;
+}
 .container {
 	background-color: #1e1e1e;
 	color: white;
