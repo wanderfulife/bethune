@@ -261,7 +261,7 @@ body {
 }
 
 .logo {
-	padding: 5%;
+	padding: 10%;
 	height: 3em;
 }
 .container {
