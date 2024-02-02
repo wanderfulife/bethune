@@ -69,8 +69,10 @@
 			<button @click="back" class="btn-return">Retour</button>
 		</div>
 	</div>
-	<button class="btn-fin" @click="downloadData">download DATA</button>
+	<!-- <button class="btn-fin" @click="downloadData">download DATA</button> -->
 </template>
+
+
 
 <script setup>
 import { ref, watch, onMounted } from 'vue';
@@ -93,6 +95,10 @@ const selectedTransport = ref('');
 const precision = ref(''); // A new ref to hold the precision input
 const selectedEnseigne = ref('');
 const precisionEnseigne = ref('');
+
+
+// Faire des modules separes pour creer une app rapidement.
+
 
 // Watch both selectedTransport and precision to handle the case where "other" is selected
 watch([selectedTransport, precision], () => {
