@@ -7,11 +7,11 @@
 		</div>
 
 		<div v-if="level === 1">
-			<h1>
-				Bonjour, dans le quadre d'un projet de rénovation, nous avons été missionnés par le Centre Commercial Auchan
-				pour mener une enquête sur vos fréquences d'achat.
+			<h3>
+				Bonjour<br><br> Dans le quadre d'un projet de rénovation<br><br> Nous avons été missionnés par le Centre Commercial Auchan
+				pour mener une enquête sur vos fréquences d'achat.<br><br>
 				Accepteriez-vous de répondre rapidement à 4 questions ?
-			</h1>
+			</h3>
 			<button @click="startSurvey" class="btn-next">COMMENCER QUESTIONNAIRE</button>
 		</div>
 
