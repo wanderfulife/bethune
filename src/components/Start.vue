@@ -1,14 +1,14 @@
 <template>
 	<div class="container">
 		<div v-if="level === 0">
-			<h1>Prenom enqueteur</h1>
+			<h2>Prenom enqueteur</h2>
 			<input class="form-control" type="text" v-model="enqueteur" placeholder="Prenom enqueteur" />
 			<button v-if="enqueteur" @click="next" class="btn-next">Suivant</button>
 		</div>
 
 		<div v-if="level === 1">
 			<h3>
-				Bonjour<br><br> Dans le quadre d'un projet de rénovation<br><br> Nous avons été missionnés par le Centre Commercial Auchan
+				Bonjour,<br><br> Dans le quadre d'un projet de rénovation<br><br> Nous avons été missionnés par le Centre Commercial Auchan
 				pour mener une enquête sur vos fréquences d'achat.<br><br>
 				Accepteriez-vous de répondre rapidement à 4 questions ?
 			</h3>
@@ -16,7 +16,7 @@
 		</div>
 
 		<div v-if="level === 2" class="form-group">
-			<h1>Indiquer le poste d'enquête</h1>
+			<h2>Indiquer le poste d'enquête</h2>
 			<select v-model="poste" class="form-control">
 				<option v-for="option in postes" :key="option.id" :value="option.output">
 					{{ option.text }}
@@ -27,7 +27,7 @@
 		</div>
 
 		<div v-if="level === 3" class="form-group">
-			<h1>Fréquentez-vous l'Hypermarché, la galerie marchande ou les deux ?</h1>
+			<h2>Fréquentez-vous l'Hypermarché,<br> la galerie marchande ou les deux ?</h2>
 			<select v-model="q1" class="form-control">
 				<option v-for="option in achat" :key="option.id" :value="option.output">
 					{{ option.text }}
@@ -38,7 +38,7 @@
 		</div>
 
 		<div v-if="level === 4" class="form-group">
-			<h1>Quel moyen de locomotion avez-vous utilisé ?</h1>
+			<h2>Quel moyen de locomotion avez-vous utilisé ?</h2>
 			<select v-model="selectedTransport" class="form-control">
 				<option v-for="option in transport" :key="option.id" :value="option.output">
 					{{ option.text }}
@@ -51,7 +51,7 @@
 		</div>
 
 		<div v-if="level === 5" class="form-group">
-			<h1>Fréquentez-vous d'autres enseignes de la zone commerciale lors de votre venue Centre Commerciale ? </h1>
+			<h2>Fréquentez-vous d'autres enseignes de la zone commerciale <br> lors de votre venue Centre Commerciale? </h2>
 			<select v-model="q3" class="form-control">
 				<option v-for="option in visite" :key="option.id" :value="option.output">
 					{{ option.text }}
@@ -62,7 +62,7 @@
 			<button @click="back" class="btn-return">retour</button>
 		</div>
 		<div v-if="q3 === 'Oui' && level === 6" class="form-group">
-			<h1>Si oui Lesquelles ?</h1>
+			<h2>Si oui Lesquelles ?</h2>
 			<select v-model="selectedEnseigne" class="form-control">
 				<option v-for="option in enseigne" :key="option.id" :value="option.output">
 					{{ option.text }}
