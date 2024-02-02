@@ -1,8 +1,8 @@
 <template>
 	<div class="container">
 		<div v-if="level === 0">
-			<h2>Prenom enqueteur</h2>
-			<input class="form-control" type="text" v-model="enqueteur" placeholder="Prenom enqueteur" />
+			<h2>Prénom enqueteur :</h2>
+			<input class="form-control" type="text" v-model="enqueteur" placeholder="" />
 			<button v-if="enqueteur" @click="next" class="btn-next">Suivant</button>
 		</div>
 
