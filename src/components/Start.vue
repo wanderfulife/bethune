@@ -7,6 +7,11 @@
 		</div>
 
 		<div v-if="level === 1">
+			<h1>
+				Bonjour, dans le quadre d'un projet de rénovation, nous avons été missionnés par le Centre Commercial Auchan
+				pour mener une enquête sur vos fréquences d'achat.
+				Accepteriez-vous de répondre rapidement à 4 questions ?
+			</h1>
 			<button @click="startSurvey" class="btn-next">COMMENCER QUESTIONNAIRE</button>
 		</div>
 
@@ -78,7 +83,7 @@
 import { ref, watch, onMounted } from 'vue';
 import { db } from "../firebase/init";
 import { postes, achat, transport, visite, enseigne } from "./reponses"
-import { collection, doc, getDoc,getDocs, updateDoc, addDoc } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, updateDoc, addDoc } from "firebase/firestore";
 import * as XLSX from "xlsx";
 
 const surveyCollectionRef = collection(db, "Bethune");
@@ -98,6 +103,7 @@ const precisionEnseigne = ref('');
 
 
 // Faire des modules separes pour creer une app rapidement.
+// tester en mode prod
 
 
 // Watch both selectedTransport and precision to handle the case where "other" is selected
