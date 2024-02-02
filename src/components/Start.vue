@@ -2,7 +2,7 @@
 	<div class="container">
 		<div v-if="level === 0">
 			<h2>Prénom enqueteur :</h2>
-			<input class="form-control" type="text" v-model="enqueteur" placeholder="" />
+			<input class="form-control" type="text" v-model="enqueteur"  />
 			<button v-if="enqueteur" @click="next" class="btn-next">Suivant</button>
 		</div>
 
@@ -73,8 +73,8 @@
 			<button @click="submitSurvey" class="btn-next">Fin</button>
 			<button @click="back" class="btn-return">Retour</button>
 		</div>
+		<img class="logo" src="../assets/Alycelogo.webp" alt="Logo Alyce">
 	</div>
-	<img class="logo" src="../assets/Alycelogo.webp" alt="Logo Alyce">
 	<!-- <button class="btn-fin" @click="downloadData">download DATA</button> -->
 </template>
 
@@ -257,14 +257,15 @@ const downloadData = async () => {
 
 <style>
 body {
-	background-color: #1e1e1e;
+	background-color: #2a3b63;
 }
 
 .logo {
+	padding: 5%;
 	height: 3em;
 }
 .container {
-	background-color: #1e1e1e;
+	background-color: #2a3b63;
 	color: white;
 	padding: 5% 0;
 	width: 75%;
@@ -329,6 +330,9 @@ h1 {
 	text-align: center;
 	color: #4caf50;
 }
+h2 {
+	color: #00203a;
+}
 
 .commune-dropdown {
 	/* Style your dropdown list here */
@@ -355,7 +359,9 @@ h1 {
 	padding: 5px 10px;
 	cursor: pointer;
 }
-
+*:focus {
+    outline: none;
+}
 .commune-dropdown li:hover {
 	background-color: #f0f0f0;
 }
