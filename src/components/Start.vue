@@ -331,7 +331,7 @@ h1 {
 	color: #4caf50;
 }
 h2 {
-	color: #00203a;
+	color: white;
 }
 
 .commune-dropdown {
