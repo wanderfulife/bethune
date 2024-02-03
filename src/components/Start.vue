@@ -75,7 +75,7 @@
 			<button @click="back" class="btn-return">Retour</button>
 		</div>
 		<img class="logo" src="../assets/Alycelogo.webp" alt="Logo Alyce">
-		<button class="btn-fin" @click="downloadData">download DATA</button>
+		<!-- <button class="btn-fin" @click="downloadData">download DATA</button> -->
 	</div>
 </template>
 
@@ -89,7 +89,7 @@ import { collection, doc, getDoc, getDocs, updateDoc, addDoc } from "firebase/fi
 import * as XLSX from "xlsx";
 
 const surveyCollectionRef = collection(db, "Bethune");
-const surveyNumber = ref(0);
+const surveyNumber = ref(0); // collect onMount\
 const level = ref(0);
 const startDate = ref('');
 const enqueteur = ref('');
