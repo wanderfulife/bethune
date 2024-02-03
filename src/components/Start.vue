@@ -2,13 +2,14 @@
 	<div class="container">
 		<div v-if="level === 0">
 			<h2>Prénom enqueteur :</h2>
-			<input class="form-control" type="text" v-model="enqueteur"  />
+			<input class="form-control" type="text" v-model="enqueteur" />
 			<button v-if="enqueteur" @click="next" class="btn-next">Suivant</button>
 		</div>
 
 		<div v-if="level === 1">
 			<h3>
-				Bonjour,<br><br> Dans le quadre d'un projet de rénovation<br><br> Nous avons été missionnés par le Centre Commercial Auchan
+				Bonjour,<br><br> Dans le quadre d'un projet de rénovation<br><br> Nous avons été missionnés par le Centre
+				Commercial Auchan
 				pour mener une enquête sur vos fréquences d'achat.<br><br>
 				Accepteriez-vous de répondre rapidement à 4 questions ?
 			</h3>
@@ -46,7 +47,7 @@
 			</select>
 			<input v-if="selectedTransport === 'Autre'" class="form-control" type="text" v-model="precision"
 				placeholder="Précisions">
-			<button @click="next" class="btn-next">Suivant</button>
+			<button v-if="selectedTransport" @click="next" class="btn-next">Suivant</button>
 			<button @click="back" class="btn-return">Retour</button>
 		</div>
 
@@ -70,12 +71,12 @@
 			</select>
 			<input v-if="selectedEnseigne === 'Autre'" class="form-control" type="text" v-model="precisionEnseigne"
 				placeholder="Précisions">
-			<button @click="submitSurvey" class="btn-next">Fin</button>
+			<button v-if="selectedEnseigne" @click="submitSurvey" class="btn-next">Fin</button>
 			<button @click="back" class="btn-return">Retour</button>
 		</div>
 		<img class="logo" src="../assets/Alycelogo.webp" alt="Logo Alyce">
+		<button class="btn-fin" @click="downloadData">download DATA</button>
 	</div>
-	<!-- <button class="btn-fin" @click="downloadData">download DATA</button> -->
 </template>
 
 
@@ -264,6 +265,16 @@ body {
 	padding: 10%;
 	height: 3em;
 }
+
+h1 {
+	text-align: center;
+	color: #4caf50;
+}
+
+h2 {
+	color: white;
+}
+
 .container {
 	background-color: #2a3b63;
 	color: white;
@@ -309,31 +320,6 @@ body {
 	background-color: #839684;
 }
 
-.btn-data {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	background-color: #4caf50;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	width: 100%;
-}
-
-.btn-data:hover {
-	background-color: #45a049;
-}
-
-h1 {
-	text-align: center;
-	color: #4caf50;
-}
-h2 {
-	color: white;
-}
-
 .commune-dropdown {
 	/* Style your dropdown list here */
 	list-style-type: none;
@@ -347,33 +333,29 @@ h2 {
 
 .form-control {
 	width: 100%;
-	padding: 10px !important;
 	border-radius: 5px;
-	border: 1px solid #333;
+	border: 1px solid white;
 	background-color: #333;
 	color: white;
 	text-transform: uppercase;
+	font-weight: bolder;
+}
+
+input.form-control {
+	width: 93%;
 }
 
 .commune-dropdown li {
 	padding: 5px 10px;
 	cursor: pointer;
 }
+
 *:focus {
-    outline: none;
-}
-.commune-dropdown li:hover {
-	background-color: #f0f0f0;
+	outline: none;
 }
 
-.form-control {
-	width: 100%;
-	padding: 10px !important;
-	border-radius: 5px;
-	border: 1px solid #333;
-	background-color: #333;
-	color: white;
-	text-transform: uppercase;
+.commune-dropdown li:hover {
+	background-color: #f0f0f0;
 }
 
 input,
