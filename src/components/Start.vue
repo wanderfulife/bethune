@@ -107,7 +107,6 @@ const precisionEnseigne = ref('');
 // Faire des modules separes pour creer une app rapidement.
 // tester en mode prod
 
-
 // Watch both selectedTransport and precision to handle the case where "other" is selected
 watch([selectedTransport, precision], () => {
 	if (selectedTransport.value === 'Autre' && precision.value) {
@@ -133,10 +132,12 @@ const fetchSurveyNumber = async () => {
 	const docSnap = await getDoc(surveyRef);
 	if (docSnap.exists() && docSnap.data().numero !== undefined) {
 		surveyNumber.value = docSnap.data().numero;
+		console.log(surveyNumber.value)
 	} else {
 		console.log("No such document or 'numero' field is missing!");
 	}
 };
+onMounted(fetchSurveyNumber);
 
 // Function to increment and update the survey number in Firebase
 const updateSurveyNumber = async () => {
@@ -149,7 +150,7 @@ const updateSurveyNumber = async () => {
 };
 
 // Fetch the current survey number when component is mounted
-onMounted(fetchSurveyNumber);
+
 
 const startSurvey = () => {
 	startDate.value = new Date().toLocaleTimeString("fr-FR").slice(0, 8);
